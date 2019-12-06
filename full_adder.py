@@ -74,6 +74,8 @@ if __name__ == '__main__':
 
 
     run_simulation(dut, testbench(),vcd_name="fa.vcd")
-
+    
+    from migen.fhdl.verilog import convert
+    convert(FullAdder(), name="full_adder").write("full_adder.v")
 # import os
 # os.system("gtkwave fa.vcd")
